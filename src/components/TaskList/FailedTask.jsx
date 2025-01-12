@@ -9,6 +9,11 @@ const FailedTask = ({ element }) => {
       </div>
       <h2 className='mt-4 text-lg font-semibold text-gray-100'>{element.taskTitle}</h2>
       <p className='mt-2 text-sm text-gray-300'>{element.taskDescription}</p>
+      <div className='text-sm text-gray-400 mt-2'>
+        <p>
+          <strong>Deadline:</strong> {element.deadlineDate || 'No deadline set'}
+        </p>
+      </div>
       <div className='mt-5'>
         <div className='w-full bg-red-900/50 text-red-300 text-center py-2 rounded-lg font-medium'>
           Failed
