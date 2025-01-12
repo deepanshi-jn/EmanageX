@@ -160,3 +160,89 @@ textarea::placeholder {
   background-color: var(--accent);
   border-radius: 50px;
 }
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Align the modal at the top */
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+  /* Fade-in effect */
+}
+
+/* Slide-in Modal */
+.modal {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -100px;
+  /* Start position above the viewport */
+  animation: slideInFromTop 0.5s forwards;
+  /* Slide-in from the top */
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
+  background-image: linear-gradient(white, white), linear-gradient(45deg, #4caf50, #8bc34a);
+   /* Green gradient border */
+   background-origin: border-box;
+  }
+  
+  @keyframes slideInFromTop {
+    0% {
+      top: -100px;
+      /* Initial position (off-screen) */
+    }
+  
+    100% {
+      top: 20px;
+      /* Final position (slightly below the top) */
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Modal Text */
+  .modal h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+.modal p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Cancel Button */
+.noted-button {
+  padding: 10px 20px;
+  background-color: #37b771;
+  /* Red color for the noted button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.noted-button:hover {
+  background-color: #e53e3e;
+}
